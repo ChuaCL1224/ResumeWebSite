@@ -1,0 +1,134 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+} */
+
+.image-container {
+    height: 100vh; 
+    overflow: hidden; /* 隐藏溢出的部分 */
+    position: relative;
+}
+
+.scrolling-image {
+    position: absolute;
+    height: 100%; /* 确保图片高度适应容器 */
+}
+
+
+.outer-div {
+    display: flex;
+    justify-content: center; /* 水平方向居中 */
+    align-items: center;     /* 垂直方向居中 */
+    height: 100vh;           /* 使外部 div 占据整个视口高度 */
+}
+
+.inner-div {
+    background-color: white; /* 可选：设置背景颜色以便更好地看到效果 */
+    padding: 20px;           /* 可选：添加内边距 */
+
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* 水平方向居中 */
+    align-items: center;     /* 垂直方向居中 */
+    /* background-color: lightgray;  */
+}
+
+h2 {
+    margin: 0; /* 清除默认的外边距 */
+    font-family: 'Arial', 'Helvetica', sans-serif; /* 使用Web安全字体 */
+}
+
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    /* font-weight: 400; */
+    font-style: normal;
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: flex-end; 
+    width: 100%; 
+    padding: 10px; 
+}
+  
+.card-title-new{
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+/* 动态CSS */
+
+/* 左到右 右到左的 */
+.hidden-element-left {
+    opacity: 0;
+    transform: translateX(-100%); 
+    transition: all 2s ease;
+}
+.hidden-element-right {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 2s ease;
+}
+
+/* .hidden-element {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s ease;
+} */
+
+.show {
+    opacity: 1;
+    transform: translateX(0); /* 目标状态恢复到正常位置 */
+}
+
+
+
+
+
+
+
+.col{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+
+
+
+.info-container {
+    display: table;
+    /* width: 100%; */
+    /* margin: 20px; */
+}
+
+.info-row {
+    display: table-row;
+}
+
+.info-label,
+.info-value {
+    display: table-cell;
+    padding: 5px 10px;
+}
+
+.info-label {
+    text-align: left; /* 右对齐标签 */
+    font-weight: bold; /* 可选：加粗标签文本 */
+}
+
+.info-value {
+    text-align: left; /* 左对齐值 */
+}

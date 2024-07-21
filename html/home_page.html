@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chua's Resume Website</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="/js/set_url.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script>
+        $(document).ready(function() { //DOM
+
+
+            $("#header-placeholder").load("reusable_page/navbar.html", function() {
+                $('#logo_image').attr('src', logo_image);
+                let code = 'nav_home';
+                $('#' + code).addClass('active');
+                $('#' + code).attr("href", "javascript:void(0)");
+            });
+
+            const hiddenElements = document.querySelectorAll('.hidden-element');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: [0, 0.5, 1] // 0-1之间的多级触发点
+            };
+
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    console.log(entry); 
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        // 停止观察，以避免再次触发回调
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            hiddenElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <br>
+    <div class="container">
+        <h2 class="pacifico-regular">Home</h2>
+    </div>
+    <br>
+
+    <div class="outer-div" style="height: 100%;">
+
+        <div class="col-md-6 col-xl-8 inner-div">
+            <div class="card shadow-none bg-transparent border border-primary mb-3 ">
+                <div class="card-body">
+                    <h5 class="card-title">Introduction</h5>
+                    <p class="card-text">
+                        Hello, My name is Chua Chee Long, you can call me Chua. This is a resume website to show my infomation such as my information, skills, experiance, education, my contact info. For you easier to understand me.
+                    </p>
+                    <br>
+                    <p class="card-text">
+                        And this resume website is using html, css, javascript, and bootstrap to develop. 
+                    </p>
+                </div>
+            </div>
+
+            <!-- ABOUT ME -->
+            <div class="card mb-3 hidden-element-left hidden-element">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img class="card-img card-img-left" src="../resource/homepage_image/done_about.png" alt="Card image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">About Me</h5>
+                            <p class="card-text">
+                                This page provides an introduction to myself, showcasing my personal background and interests.
+                            </p>
+                            <div class="flex-container">
+                                 <a href="about_page.html">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERIENCE -->
+            <div class="card mb-3 hidden-element-right hidden-element">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Skills</h5>
+                            <p class="card-text">
+                                To showcases the various skills that i possess, including both technical and soft skills.
+                            </p>
+                            <div class="flex-container">
+                                 <a href="skill_page.html">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="card-img card-img-right" src="../resource/homepage_image/done_skill02.png" alt="Card image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 hidden-element-left hidden-element">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img class="card-img card-img-left" src="../resource/homepage_image/done_experience.png" alt="Card image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Experienace</h5>
+                            <p class="card-text">
+                                This page lists my work experience, and details my responsibilities in various positions.
+                            </p>
+                        <div class="flex-container">
+                                 <a href="experiance_page.html">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 hidden-element-right hidden-element">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Education</h5>
+                            <p class="card-text">
+                                lists my educational background, including the degrees and courses. It showcases my academic achievements and professional knowledge.
+                            </p>
+                            <div class="flex-container">
+                                 <a href="education_page.html">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="card-img card-img-right" src="../resource/homepage_image/done_education.png" alt="Card image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 hidden-element-left hidden-element">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img class="card-img card-img-left" src="../resource/homepage_image/done_contact.png" alt="Card image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Contact</h5>
+                            <p class="card-text">
+                                It provides ways to contact me, including my email address, phone number, and social media links.
+                            </p>
+                        <div class="flex-container">
+                                 <a href="contact_page.html">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

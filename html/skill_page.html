@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chua's Resume Website</title>
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/set_url.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+        $(document).ready(function() { //DOM
+
+            $("#header-placeholder").load("reusable_page/navbar.html", function() {
+
+                $('#logo_image').attr('src', logo_image);
+
+                let code = 'nav_skill';
+
+                $('#'+code).addClass('active');
+
+                $('#'+code).attr("href","javascript:void(0)");
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+
+    <br>
+    <div class="container">
+        <h2 class="pacifico-regular">Skills</h2>
+    </div>
+    <br>
+
+    <div class="outer-div" style="height: 100%;">
+
+        <div class="col-md-6 col-xl-8 inner-div">
+            
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+                <div class="col">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="../resource/skill_image/html.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">HTML</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="../resource/skill_image/css.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">CSS</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="../resource/skill_image/javascript.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="../resource/skill_image/php.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="../resource/skill_image/jquery.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="../resource/skill_image/sql.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                      <img class="card-img-top" src="../resource/skill_image/postgres.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img class="card-img-top" src="../resource/skill_image/python.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img class="card-img-top" src="../resource/skill_image/java.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+        </div>
+        
+
+    </div>
+
+</body>
+</html>

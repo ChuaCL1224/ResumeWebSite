@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chua's Resume Website</title>
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/set_url.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+        $(document).ready(function() { //DOM
+
+            $("#header-placeholder").load("reusable_page/navbar.html", function() {
+
+                $('#logo_image').attr('src', logo_image);
+
+                let code = 'nav_contact';
+
+                $('#'+code).addClass('active');
+
+                $('#'+code).attr("href","javascript:void(0)");
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+
+    <br>
+    <div class="container">
+        <h2 class="pacifico-regular">Contact</h2>
+    </div>
+    <br>
+
+</body>
+</html>
