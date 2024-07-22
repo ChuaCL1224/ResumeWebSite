@@ -26,6 +26,34 @@
 
             });
 
+
+            //movement section
+            const hiddenElements = document.querySelectorAll('.hidden-element');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: [0, 0.5, 1] // 0-1之间的多级触发点
+            };
+
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    console.log(entry); 
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        // 停止观察，以避免再次触发回调
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            hiddenElements.forEach(element => {
+                observer.observe(element);
+            });
+
         });
     </script>
 </head>
@@ -45,85 +73,94 @@
             
 
             <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-                <div class="col">
-                  <div class="card h-100">
-                    <img class="card-img-top" src="../resource/skill_image/html.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">HTML</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img class="card-img-top" src="../resource/skill_image/css.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">CSS</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img class="card-img-top" src="../resource/skill_image/javascript.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img class="card-img-top" src="../resource/skill_image/php.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img class="card-img-top" src="../resource/skill_image/jquery.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img class="card-img-top" src="../resource/skill_image/sql.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
+                <div class="col hidden-element hidden-element">
                     <div class="card h-100">
-                      <img class="card-img-top" src="../resource/skill_image/postgres.png" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
+                        <img class="card-img-top card" src="../resource/skill_image/html.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold bold">HTML</h5>
+                            <p class="card-text">Usage Frequency : Frequently Used</p>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col">
+                </div>
+                <div class="col hidden-element">
                     <div class="card h-100">
-                      <img class="card-img-top" src="../resource/skill_image/python.png" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
+                        <img class="card-img-top card" src="../resource/skill_image/css.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold">CSS</h5>
+                            <p class="card-text">Usage Frequency : Frequently Used</p>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col">
+                </div>
+                <div class="col hidden-element">
                     <div class="card h-100">
-                      <img class="card-img-top" src="../resource/skill_image/java.png" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
+                        <img class="card-img-top card" src="../resource/skill_image/javascript.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold">JavaScript</h5>
+                            <p class="card-text">Usage Frequency : Frequently Used</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col hidden-element">
+                    <div class="card h-100">
+                        <img class="card-img-top card" src="../resource/skill_image/php.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold">PHP</h5>
+                            <p class="card-text">Usage Frequency : Frequently Used</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col hidden-element">
+                    <div class="card h-100">
+                        <img class="card-img-top card" src="../resource/skill_image/jquery.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold">jQuery</h5>
+                            <p class="card-text">Usage Frequency : Frequently Used</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col hidden-element">
+                    <div class="card h-100">
+                        <img class="card-img-top card" src="../resource/skill_image/laravel.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold">Laravel</h5>
+                            <p class="card-text">Usage Frequency : Frequently Used</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col hidden-element">
+                    <div class="card h-100">
+                        <img class="card-img-top card" src="../resource/skill_image/sql.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold">SQL Script</h5>
+                            <p class="card-text">Usage Frequency : Frequently Used</p>
+                        </div>
+                  </div>
+                </div>
+                <div class="col hidden-element">
+                    <div class="card h-100">
+                        <img class="card-img-top card" src="../resource/skill_image/postgres.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold">Postgres</h5>
+                            <p class="card-text">Usage Frequency : Frequently Used</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col hidden-element">
+                    <div class="card h-100">
+                        <img class="card-img-top card" src="../resource/skill_image/python.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold">Python</h5>
+                            <p class="card-text">Usage Frequency : Occasionally Used</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col hidden-element">
+                    <div class="card h-100">
+                        <img class="card-img-top card" src="../resource/skill_image/java.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title bold">JAVA</h5>
+                            <p class="card-text">Usage Frequency : Rarely Used</p>
+                        </div>
                     </div>
                   </div>
               </div>

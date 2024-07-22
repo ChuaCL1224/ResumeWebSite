@@ -5,6 +5,19 @@
     height: 100vh;
     margin: 0;
 } */
+.custom-card {
+    background-color: rgba(187, 178, 172, 0.5); /* 浅巧克力色，50%透明度 */
+    /* border: 2px solid chocolate; */
+}
+
+
+.card {
+    border-radius: 15px; 
+}
+
+.bold{
+    font-weight: bold;
+}
 
 .image-container {
     height: 100vh; 
