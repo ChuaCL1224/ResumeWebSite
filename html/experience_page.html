@@ -26,6 +26,33 @@
 
             });
 
+            //movement section
+            const hiddenElements = document.querySelectorAll('.hidden-element');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: [0, 0.5, 1] // 0-1之间的多级触发点
+            };
+
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    console.log(entry); 
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        // 停止观察，以避免再次触发回调
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            hiddenElements.forEach(element => {
+                observer.observe(element);
+            });
+
         });
     </script>
 </head>
@@ -43,7 +70,7 @@
 
         <div class="col-md-6 col-xl-8 inner-div">
 
-            <div class="card custom-card mb-3 ">
+            <div class="card custom-card mb-3 hidden-element-left hidden-element">
                 <div class="card-body">
                     <h5 class="card-title card-title-new">Icare Technology Sdn Bhd (Internship)</h5>
                     <div class="info-container">
@@ -80,7 +107,7 @@
             </div>
 
 
-            <div class="card custom-card mb-3 ">
+            <div class="card custom-card mb-3 hidden-element-right hidden-element">
                 <div class="card-body">
                     <h5 class="card-title card-title-new">Audit Online Solution Sdn Bhd</h5>
                     <div class="info-container">

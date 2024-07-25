@@ -37,6 +37,35 @@
             //set the div to my age 
             $('#myAge').text(age+" Years Old");
 
+
+
+            //movement section
+            const hiddenElements = document.querySelectorAll('.hidden-element');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: [0, 0.5, 1] // 0-1之间的多级触发点
+            };
+
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    console.log(entry); 
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('showOpacity');
+                        // 停止观察，以避免再次触发回调
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            hiddenElements.forEach(element => {
+                observer.observe(element);
+            });
+
         });
     </script>
 </head>
@@ -55,12 +84,12 @@
         <div class="col-md-6 col-xl-8 inner-div">
             
 
-            <div class="card custom-card mb-3 ">
+            <div class="card custom-card mb-3 hidden-element hidden-element-opacity ">
                 <div class="card-body">
                     <h5 class="card-title card-title-new">Personal Information</h5>
                     <div class="container">
                         <!-- <p>ccl image</p> -->
-                         <img src="../resource/CCLImage1.jpg" alt="" class="card" style="width: 15vw;">
+                         <img src="../resource/CCLImage1.jpg" alt="" class="card" style="width: 30vh;">
                     </div>
                     <div class="info-container">
                         <!-- Name -->
@@ -86,28 +115,28 @@
                 </div>
             </div>
 
-            <div class="card custom-card mb-3 ">
+            <div class="card custom-card mb-3 hidden-element hidden-element-opacity ">
                 <div class="card-body">
                     <h5 class="card-title card-title-new">Background</h5>
                     <p>I graduated from Southern University College with a Bachelor of Software Engineering. I have 4 months of experience in product coodinator, software tester, and software trainer in my internship. Besides that, I have 8 months of experiance in web developer which in my current company, Audit Online Solution Sdn Bhd.</p>
                 </div>
             </div>
 
-            <div class="card custom-card mb-3 ">
+            <div class="card custom-card mb-3 hidden-element hidden-element-opacity ">
                 <div class="card-body">
                     <h5 class="card-title card-title-new">Skills and Expertise</h5>
                     <p>HTML, JavaScript, jQuery, CSS, Python, and so in. <a href="skill_page.html">View More...</a></p>
                 </div>
             </div>
 
-            <div class="card custom-card mb-3 ">
+            <div class="card custom-card mb-3 hidden-element hidden-element-opacity ">
                 <div class="card-body">
                     <h5 class="card-title card-title-new">Personal Interests and Hobbies</h5>
                     <p>I really enjoy playing badminton in my free time. Sometimes, my friends and I arrange a game when we're all available.</p>
                 </div>
             </div>
 
-            <div class="card custom-card mb-3 ">
+            <div class="card custom-card mb-3 hidden-element hidden-element-opacity ">
                 <div class="card-body">
                     <h5 class="card-title card-title-new">Language</h5>
                     <ul>

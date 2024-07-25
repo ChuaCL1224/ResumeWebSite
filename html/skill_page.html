@@ -41,7 +41,7 @@
                 entries.forEach(entry => {
                     console.log(entry); 
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
+                        entry.target.classList.add('showSize');
                         // 停止观察，以避免再次触发回调
                         observer.unobserve(entry.target);
                     }
@@ -73,7 +73,7 @@
             
 
             <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-                <div class="col hidden-element hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/html.png" alt="Card image cap">
                         <div class="card-body">
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/css.png" alt="Card image cap">
                         <div class="card-body">
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/javascript.png" alt="Card image cap">
                         <div class="card-body">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/php.png" alt="Card image cap">
                         <div class="card-body">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/jquery.png" alt="Card image cap">
                         <div class="card-body">
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/laravel.png" alt="Card image cap">
                         <div class="card-body">
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/sql.png" alt="Card image cap">
                         <div class="card-body">
@@ -136,7 +136,7 @@
                         </div>
                   </div>
                 </div>
-                <div class="col hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/postgres.png" alt="Card image cap">
                         <div class="card-body">
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/python.png" alt="Card image cap">
                         <div class="card-body">
@@ -154,7 +154,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col hidden-element">
+                <div class="col hidden-element hidden-element-small">
                     <div class="card h-100">
                         <img class="card-img-top card" src="../resource/skill_image/java.png" alt="Card image cap">
                         <div class="card-body">

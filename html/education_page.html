@@ -26,6 +26,33 @@
 
             });
 
+            //movement section
+            const hiddenElements = document.querySelectorAll('.hidden-element');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: [0, 0.5, 1] // 0-1之间的多级触发点
+            };
+
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    console.log(entry); 
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        // 停止观察，以避免再次触发回调
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            hiddenElements.forEach(element => {
+                observer.observe(element);
+            });
+
         });
     </script>
 </head>
@@ -38,6 +65,112 @@
         <h2 class="pacifico-regular">Education</h2>
     </div>
     <br>
+
+    <div class="outer-div" style="height: 100%;">
+
+        <div class="col-md-6 col-xl-8 inner-div">
+
+            <div class="card custom-card mb-3 hidden-element-right hidden-element">
+                <div class="card-body">
+                    <h5 class="card-title card-title-new"></h5>
+                    <div class="container">
+                        <img src="../resource/education_images/suc_logo.png" alt="SUC Logo">
+                    </div>
+                    <div class="info-container">
+
+                        <div class="info-row">
+                            <div class="info-label">University Name</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">Southern University College</div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-label">Degree</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">Bachelor of Software Engineering</div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-label">Major</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">Software Engineering</div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-label">Dates Attended</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">2020 - 2023</div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-label">GPA</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">2.92/4.0</div>
+                        </div>
+
+                        <!-- <div class="info-row">
+                            <div class="info-label">Relevant Courses</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value"></div>
+                        </div> -->
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card custom-card mb-3 hidden-element-left hidden-element">
+                <div class="card-body">
+                    <h5 class="card-title card-title-new"></h5>
+                    <div class="container">
+                        <img src="../resource/education_images/suc_logo.png" alt="SUC Logo">
+                    </div>
+                    <div class="info-container">
+
+                        <div class="info-row">
+                            <div class="info-label">University Name</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">Southern University College</div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-label">Degree</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">Foundation in Art</div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-label">Major</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">Foundation in Art</div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-label">Dates Attended</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">2019 - 2020</div>
+                        </div>
+
+                        <!-- <div class="info-row">
+                            <div class="info-label">GPA</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value">2.92/4.0</div>
+                        </div> -->
+
+                        <!-- <div class="info-row">
+                            <div class="info-label">Relevant Courses</div>
+                            <div class="info-value">:</div>
+                            <div class="info-value"></div>
+                        </div> -->
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
 
 </body>
 </html>
