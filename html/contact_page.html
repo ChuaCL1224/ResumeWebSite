@@ -27,8 +27,16 @@
 
             });
 
+            $("#footer-placeholder").load("reusable_page/footer.html");
+
         });
     </script>
+    <style>
+        html, body {
+            height: 80%;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     
@@ -42,7 +50,7 @@
 
     <div class="outer-div" style="height: 100%;">
 
-        <div class="col-md-6 col-xl-8 inner-div">
+        <div class="col-md-6 col-xl-8 inner-div" style="align-self: flex-start;">
 
             <!-- <div class="card custom-card mb-3 hidden-element-right hidden-element"> -->
             <div class="card custom-card mb-3">
@@ -83,6 +91,6 @@
 
         </div>
     </div>
-
+    <div id="footer-placeholder"></div>
 </body>
 </html>

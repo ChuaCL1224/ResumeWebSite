@@ -8,6 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <script src="/js/set_url.js"></script>
     <link rel="stylesheet" href="../css/style.css">
 
@@ -25,6 +26,8 @@
                 $('#'+code).attr("href","javascript:void(0)");
 
             });
+            
+            $("#footer-placeholder").load("reusable_page/footer.html");
 
 
             //movement section
@@ -169,6 +172,6 @@
         
 
     </div>
-
+    <div id="footer-placeholder"></div>
 </body>
 </html>
